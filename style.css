@@ -1,0 +1,114 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* .layout2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 350px 100px 350px;
+    grid-gap: 30px;
+    padding: 30px;
+    grid-template-areas:
+        "h1 h1 h2 h3"
+        "h4 h5 h2 h3"
+        "h4 h5 h6 h6";
+}
+
+.layout-item {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.layout-item .layout-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+   
+} */
+
+/* .layout-item:first-child {
+    grid-area: h1;
+}
+
+.layout-item:nth-child(2) {
+    grid-area: h2;
+}
+.layout-item:nth-child(3) {
+    grid-area: h3;
+}
+.layout-item:nth-child(4) {
+    grid-area: h4;
+}
+.layout-item:nth-child(5) {
+    grid-area: h5;
+}
+
+.layout-item:last-child {
+    grid-area: h6;
+} */
+
+.layout {
+    display: grid;
+    /* grid-template-columns: repeat(4, 1fr); */
+    grid-gap: 36px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    padding: 30px;
+}
+
+/* @media screen and (max-width : 1280px) {
+    .layout {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media screen and (max-width : 1023px) {
+    .layout {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width : 600px) {
+    .layout {
+        grid-template-columns: repeat(2, 1fr);
+    }
+} */
+    
+
+
+.img-item {
+    border-radius: 10px;
+    height:  300px;
+}
+
+.img-item .layout-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+}
+
+
+@media screen and (max-width : 1023px) {
+    .layout {
+        grid-template-columns: unset;
+        grid-auto-flow:column;
+        grid-auto-columns: 80%;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-snap-stop: always;
+    }
+
+    .layout {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .layout::-webkit-scrollbar {
+        display: none;
+    }
+
+    .img-item  {
+        scroll-snap-align: end;
+    }
+}
